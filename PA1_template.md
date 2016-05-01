@@ -113,7 +113,7 @@ cat("Median of total steps per day:", median(totalStepsPerDayImputedSet$total))
 ```
 ## Median of total steps per day: 10766.19
 ```
-### We replaced NA's with the mean for the respective time intervals. The mean remains the same. The median of the imputed data has become the same as the mean !
+#### We replaced NA's with the mean for the respective time intervals. The mean remains the same. The median of the imputed data has become the same as the mean !
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
