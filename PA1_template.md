@@ -1,9 +1,15 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
 
 ```r
+unzip(zipfile="activity.zip")
 # read in the file
 activity <- read.csv("activity.csv")
 # convert data column to Date type
@@ -24,7 +30,7 @@ totalStepsPerDaySet <- aggregate(list(total = nonNaActivity$steps), FUN = sum, b
 hist(totalStepsPerDaySet$total, xlab = "", main = "Total number of steps taken each day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 ```r
 # Calculate and report the mean and median total number of steps taken per day
@@ -54,7 +60,7 @@ avgStepsByInterval <- aggregate(steps ~ interval, data = nonNaActivity, mean)
 plot(avgStepsByInterval$interval, avgStepsByInterval$steps, type = "l", xlab = "5-minute interval", ylab = "Average number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
 
 ```r
 # find which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps 
@@ -89,7 +95,7 @@ totalStepsPerDayImputedSet <- aggregate(list(total = activityImputed$steps), FUN
 hist(totalStepsPerDayImputedSet$total, xlab = "", main = "Total number of steps taken each day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
 ```r
 # report mean and median of imputed data set
@@ -127,4 +133,4 @@ library(lattice)
 xyplot(steps ~ interval | typeOfDay, data = avgStepsByIntervalAndDayType, type = "l", xlab = "5-minute interval", ylab = "Average number of steps", layout = c(1,2))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)

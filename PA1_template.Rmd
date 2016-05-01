@@ -8,6 +8,7 @@ output:
 
 ## Loading and preprocessing the data
 ```{r}
+unzip(zipfile="activity.zip")
 # read in the file
 activity <- read.csv("activity.csv")
 # convert data column to Date type
