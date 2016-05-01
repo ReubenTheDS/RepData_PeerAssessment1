@@ -64,7 +64,7 @@ hist(totalStepsPerDayImputedSet$total, xlab = "", main = "Total number of steps 
 cat("Mean of total steps  per day:", mean(totalStepsPerDayImputedSet$total))
 cat("Median of total steps per day:", median(totalStepsPerDayImputedSet$total))
 ```
-
+### We replaced NA's with the mean for the respective time intervals. The mean remains the same. The median of the imputed data has become the same as the mean !
 
 ## Are there differences in activity patterns between weekdays and weekends?
 ```{r}
